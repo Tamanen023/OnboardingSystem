@@ -1,0 +1,32 @@
+# Composer / PHP
+/vendor/
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+
+# Drupal runtime
+/web/sites/*/files/
+/web/sites/*/private/
+/web/sites/*/settings.php
+/web/sites/*/settings.local.php
+/web/sites/*/services.yml
+/web/sites/*/services.local.yml
+
+# DDEV
+./.ddev/.downloads/
+/.ddev/db_snapshots/
+/.ddev/commands/host/*
+!/.ddev/commands/host/.gitkeep
+.ddev/
+
+# Node (if you have a frontend)
+/node_modules/
+/frontend/node_modules/
+/frontend/dist/
+
+# Env & OS noise
+.env*
+!.env.example
+.DS_Store
+Thumbs.db
