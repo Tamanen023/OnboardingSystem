@@ -9,8 +9,10 @@ dependencies:
     - contact
     - file
     - filter
+    - rest
     - search
     - shortcut
+    - simple_oauth
     - system
 _core:
   default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
@@ -23,6 +25,8 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'administer oauth2 scopes'
+  - 'administer rest resources'
   - 'delete own files'
   - 'post comments'
   - 'search content'
