@@ -44,14 +44,17 @@ public function login(Request $request) {
 
   $content = $request->getContent();
   $data = json_decode($content, TRUE) ?: [];
-  $username = $data['name'] ?? '';
+  $email = $data['email'] ?? ''; 
   $password = $data['pass'] ?? '';
 
-  if ($username === '' || $password === '') {
+  if ($email === '' || $password === '') {
     return new JsonResponse(['error' => 'Missing credentials'], 400, $response_headers);
   }
 
-  $account = user_load_by_name($username);
+  // Load user by email
+  $users = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['mail' => $email]);
+  $account = !empty($users) ? reset($users) : NULL;
+
   if (!$account instanceof UserInterface) {
     return new JsonResponse(['error' => 'Invalid credentials'], 401, $response_headers);
   }
@@ -64,7 +67,7 @@ public function login(Request $request) {
 
   $csrf_token = \Drupal::service('csrf_token')->get('rest');
 
-  $response = new JsonResponse([
+  return new JsonResponse([
     'message' => 'Login successful',
     'current_user' => [
       'uid' => (int) $account->id(),
@@ -73,9 +76,8 @@ public function login(Request $request) {
     ],
     'token' => $csrf_token,
   ], 200, $response_headers);
-
-  return $response;
 }
+
 
 
   /**
