@@ -1,0 +1,22 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Install, update and uninstall functions for the elca_admin module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function elca_admin_install(): void {
+  \Drupal::messenger()->addStatus(t('Module elca_admin has been installed.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function elca_admin_uninstall(): void {
+  \Drupal::messenger()->addStatus(t('Module elca_admin has been uninstalled.'));
+}

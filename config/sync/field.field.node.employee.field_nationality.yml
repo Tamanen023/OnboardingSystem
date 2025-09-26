@@ -1,0 +1,19 @@
+uuid: 3e8f6af4-e67d-45f1-b067-99e39ef0b253
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nationality
+    - node.type.employee
+id: node.employee.field_nationality
+field_name: field_nationality
+entity_type: node
+bundle: employee
+label: Nationality
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

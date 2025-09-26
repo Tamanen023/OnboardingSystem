@@ -1,0 +1,18 @@
+uuid: 17572b0d-7193-4628-bac3-7bc32830931e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Employee
+type: employee
+description: 'Contain all the imformation for an ELCA employee.'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: true

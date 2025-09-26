@@ -1,0 +1,21 @@
+uuid: 4c2322d0-993b-4e73-90dc-133967994f0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hardwares
+    - node.type.employee
+id: node.employee.field_hardwares
+field_name: field_hardwares
+entity_type: node
+bundle: employee
+label: Hardwares
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

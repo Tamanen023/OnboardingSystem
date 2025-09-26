@@ -1,0 +1,29 @@
+uuid: c2ca2bf8-33e4-47c0-a83e-705e2ac31607
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_level
+    - node.type.employee
+    - taxonomy.vocabulary.level
+id: node.employee.field_level
+field_name: field_level
+entity_type: node
+bundle: employee
+label: Level
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      level: level
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

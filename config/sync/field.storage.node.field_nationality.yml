@@ -1,0 +1,21 @@
+uuid: a88406a4-5ee8-4f6b-b843-8b46d99d1cbe
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_nationality
+field_name: field_nationality
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -32,7 +32,8 @@
         "drupal/simple_oauth": "^6.0",
         "drupal/symfony_mailer": "^1.6",
         "drupal/workflow": "^2.1",
-        "drush/drush": "^13.6"
+        "drush/drush": "^13.6",
+        "phpoffice/phpspreadsheet": "^2.1"
     },
     "conflict": {
         "drupal/drupal": "*"

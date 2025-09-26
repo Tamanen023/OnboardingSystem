@@ -1,0 +1,21 @@
+uuid: 24668117-d491-4802-b4d3-e2f907500bc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nid
+    - node.type.employee
+id: node.employee.field_nid
+field_name: field_nid
+entity_type: node
+bundle: employee
+label: NID
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,21 @@
+uuid: 26c491e5-e62e-4805-b75b-096e0b223a0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_medical
+    - node.type.employee
+id: node.employee.field_medical
+field_name: field_medical
+entity_type: node
+bundle: employee
+label: Medical
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

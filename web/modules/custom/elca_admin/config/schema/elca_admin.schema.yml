@@ -1,0 +1,16 @@
+elca_admin.settings:
+  type: config_object
+  label: 'ELCA Admin settings'
+  mapping:
+    last_import_fid:
+      type: integer
+      label: 'Last imported file ID'
+    employee_bundle:
+      type: string
+      label: 'Employee content type machine name'
+    csv_delimiter:
+      type: string
+      label: 'CSV delimiter'
+    multi_value_sep:
+      type: string
+      label: 'Multi-value separator'
