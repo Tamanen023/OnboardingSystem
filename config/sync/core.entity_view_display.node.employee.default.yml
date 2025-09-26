@@ -6,7 +6,10 @@ dependencies:
     - field.field.node.employee.field_certificate_of_character
     - field.field.node.employee.field_cv_resume
     - field.field.node.employee.field_datejoined
+    - field.field.node.employee.field_dl
+    - field.field.node.employee.field_elcademy
     - field.field.node.employee.field_email
+    - field.field.node.employee.field_gift_pack
     - field.field.node.employee.field_hardwares
     - field.field.node.employee.field_level
     - field.field.node.employee.field_medical
@@ -21,7 +24,14 @@ dependencies:
     - node.type.employee
   module:
     - datetime
+    - field_layout
+    - layout_discovery
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: node.employee.default
 targetEntityType: node
 bundle: employee
@@ -56,12 +66,40 @@ content:
     third_party_settings: {  }
     weight: 113
     region: content
+  field_dl:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_elcademy:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 118
+    region: content
   field_email:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_gift_pack:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 117
     region: content
   field_hardwares:
     type: boolean

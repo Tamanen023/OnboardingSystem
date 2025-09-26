@@ -1,0 +1,9 @@
+uuid: d8e253ed-fa67-4788-ac24-443336c73a8f
+langcode: en
+status: true
+dependencies: {  }
+id: it
+label: IT
+weight: 7
+is_admin: false
+permissions: {  }

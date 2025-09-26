@@ -1,0 +1,14 @@
+uuid: ad01dd2d-23ff-4aa0-8c6c-31d8ef47bcc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.dl
+  module:
+    - user
+id: user_remove_role_action.dl
+label: 'Remove the Department Lead role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: dl

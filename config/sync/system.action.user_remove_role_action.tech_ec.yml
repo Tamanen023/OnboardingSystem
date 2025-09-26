@@ -1,0 +1,14 @@
+uuid: c454a13b-e268-4ba0-bd68-a3c976a03acf
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.tech_ec
+  module:
+    - user
+id: user_remove_role_action.tech_ec
+label: 'Remove the Tech EC role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: tech_ec
