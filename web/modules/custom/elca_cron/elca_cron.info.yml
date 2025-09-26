@@ -1,0 +1,5 @@
+name: 'elca_cron'
+type: module
+description: 'Module that will automate email sending using cron'
+package: custom
+core_version_requirement: ^10 || ^11

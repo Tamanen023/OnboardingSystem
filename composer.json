@@ -26,6 +26,7 @@
         "drupal/gin": "^5.0",
         "drupal/jsonapi_extras": "^3.26",
         "drupal/key": "^1.20",
+        "drupal/mailsystem": "^4.5",
         "drupal/paragraphs": "^1.19",
         "drupal/pathauto": "^1.13",
         "drupal/restui": "^1.22",

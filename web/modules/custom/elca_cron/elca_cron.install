@@ -1,0 +1,82 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Install, update and uninstall functions for the elca_cron module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function elca_cron_install(): void {
+  \Drupal::messenger()->addStatus(t('Module elca_cron has been installed.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function elca_cron_uninstall(): void {
+  \Drupal::messenger()->addStatus(t('Module elca_cron has been uninstalled.'));
+}
+
+/**
+ * Implements hook_schema().
+ */
+function elca_cron_schema() {
+  $schema['elca_cron_mail_log'] = [
+    'description' => 'One-time email sent log to avoid duplicates.',
+    'fields' => [
+      'id' => ['type' => 'serial', 'not null' => TRUE],
+      'entity_type' => ['type' => 'varchar', 'length' => 32, 'not null' => TRUE],
+      'entity_id' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE],
+      'mail_key' => ['type' => 'varchar', 'length' => 64, 'not null' => TRUE],
+      'sent_at' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE],
+    ],
+    'primary key' => ['id'],
+    'unique keys' => [
+      'uniq_entity_mail' => ['entity_type', 'entity_id', 'mail_key'],
+    ],
+    'indexes' => [
+      'by_entity' => ['entity_type', 'entity_id'],
+      'by_mail_key' => ['mail_key'],
+      'by_sent_at' => ['sent_at'],
+    ],
+  ];
+
+  return $schema;
+}
+
+
+/**
+ * Create elca_cron_mail_log table on existing installs.
+ */
+function elca_cron_update_9001() {
+  $db = \Drupal::database();
+  $schema = $db->schema();
+
+  if (!$schema->tableExists('elca_cron_mail_log')) {
+    // Re-declare the table spec (same as in hook_schema()).
+    $spec = [
+      'description' => 'One-time email sent log to avoid duplicates.',
+      'fields' => [
+        'id' => ['type' => 'serial', 'not null' => TRUE],
+        'entity_type' => ['type' => 'varchar', 'length' => 32, 'not null' => TRUE],
+        'entity_id' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE],
+        'mail_key' => ['type' => 'varchar', 'length' => 64, 'not null' => TRUE],
+        'sent_at' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE],
+      ],
+      'primary key' => ['id'],
+      'unique keys' => [
+        'uniq_entity_mail' => ['entity_type', 'entity_id', 'mail_key'],
+      ],
+      'indexes' => [
+        'by_entity' => ['entity_type', 'entity_id'],
+        'by_mail_key' => ['mail_key'],
+        'by_sent_at' => ['sent_at'],
+      ],
+    ];
+    $schema->createTable('elca_cron_mail_log', $spec);
+  }
+}

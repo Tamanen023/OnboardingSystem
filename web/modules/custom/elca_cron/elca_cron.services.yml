@@ -1,0 +1,10 @@
+services:
+  logger.channel.elca_cron:
+    parent: logger.channel_base
+    arguments: ['elca_cron']
+
+  elca_cron.cron:
+    class: Drupal\elca_cron\Cron\ElcaCron
+    arguments: ['@entity_type.manager', '@queue', '@database', '@datetime.time', '@logger.channel.elca_cron']
+    tags:
+      - { name: cron }

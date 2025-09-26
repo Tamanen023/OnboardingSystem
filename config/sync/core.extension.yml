@@ -23,6 +23,7 @@ module:
   editor: 0
   elca_admin: 0
   elca_api: 0
+  elca_cron: 0
   examples: 0
   field: 0
   field_ui: 0
@@ -36,6 +37,7 @@ module:
   key: 0
   link: 0
   mailer_transport: 0
+  mailsystem: 0
   media: 0
   menu_link_content: 0
   menu_ui: 0

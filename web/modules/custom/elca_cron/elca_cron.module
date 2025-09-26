@@ -1,0 +1,23 @@
+<?php
+use Drupal\Core\Mail\MailFormatHelper;
+
+/**
+ * Implements hook_mail().
+ */
+function elca_cron_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'employee_three_month':
+      $message['subject'] = $params['subject'] ?? 'Congratulations on 3 months!';
+      $message['body'][] = $params['body'];
+      break;
+
+    case 'employee_six_month':
+      $message['subject'] = $params['subject'] ?? 'Half-year milestone 🎉';
+      $message['body'][] = $params['body'];
+      break;
+
+    case 'on_visa_created':
+      $message['subject'] = $params['subject'] ?? 'Visa for' . $params['name'] . ' has been created';
+      $message['body'][] = $params['body'];
+  }
+}
