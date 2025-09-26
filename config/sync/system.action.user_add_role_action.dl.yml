@@ -1,0 +1,14 @@
+uuid: 82d7bac5-e7b3-4a44-a723-c92d01a6d395
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.dl
+  module:
+    - user
+id: user_add_role_action.dl
+label: 'Add the Department Lead role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: dl

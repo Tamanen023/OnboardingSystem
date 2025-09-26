@@ -1,0 +1,14 @@
+uuid: f861ba3c-242f-483d-b699-8cc4a2a1a9be
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.tech_ec
+  module:
+    - user
+id: user_add_role_action.tech_ec
+label: 'Add the Tech EC role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: tech_ec
