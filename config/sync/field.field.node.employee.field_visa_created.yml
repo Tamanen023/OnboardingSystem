@@ -1,0 +1,21 @@
+uuid: b9b9bab9-f400-4a5c-b4e5-3683af971b3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_visa_created
+    - node.type.employee
+id: node.employee.field_visa_created
+field_name: field_visa_created
+entity_type: node
+bundle: employee
+label: 'Visa Created'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: b0e8290d-3a21-4503-b9e9-450932e9ce1a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_gift_pack
+field_name: field_gift_pack
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

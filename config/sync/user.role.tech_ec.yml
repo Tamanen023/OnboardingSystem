@@ -1,0 +1,9 @@
+uuid: 2b798603-b7ea-484c-8785-2f341b2a318a
+langcode: en
+status: true
+dependencies: {  }
+id: tech_ec
+label: 'Tech EC'
+weight: 6
+is_admin: false
+permissions: {  }

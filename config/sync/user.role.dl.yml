@@ -1,0 +1,9 @@
+uuid: 98e9a914-e470-4b7f-99bb-1d0613026dab
+langcode: en
+status: true
+dependencies: {  }
+id: dl
+label: 'Department Lead'
+weight: 5
+is_admin: false
+permissions: {  }
