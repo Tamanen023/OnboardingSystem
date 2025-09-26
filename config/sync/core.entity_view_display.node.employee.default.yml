@@ -4,24 +4,36 @@ status: true
 dependencies:
   config:
     - field.field.node.employee.field_certificate_of_character
+    - field.field.node.employee.field_confirmation_letter
     - field.field.node.employee.field_cv_resume
     - field.field.node.employee.field_datejoined
     - field.field.node.employee.field_dl
     - field.field.node.employee.field_elcademy
     - field.field.node.employee.field_email
+    - field.field.node.employee.field_employee_status
+    - field.field.node.employee.field_first_day_confirmation
     - field.field.node.employee.field_gift_pack
     - field.field.node.employee.field_hardwares
+    - field.field.node.employee.field_joiners_and_leavers
     - field.field.node.employee.field_level
+    - field.field.node.employee.field_liaise_with_caterer
+    - field.field.node.employee.field_lunch_invitation
     - field.field.node.employee.field_medical
     - field.field.node.employee.field_name
     - field.field.node.employee.field_nationality
     - field.field.node.employee.field_nid
+    - field.field.node.employee.field_parking_access
+    - field.field.node.employee.field_photo_permission
     - field.field.node.employee.field_position
+    - field.field.node.employee.field_prepared_document
+    - field.field.node.employee.field_scan_docs
     - field.field.node.employee.field_source
     - field.field.node.employee.field_supervisor
     - field.field.node.employee.field_team
     - field.field.node.employee.field_visa
     - field.field.node.employee.field_visa_created
+    - field.field.node.employee.field_visit_tour
+    - field.field.node.employee.field_welcoming_mail
     - node.type.employee
   module:
     - datetime
@@ -47,6 +59,16 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 109
+    region: content
+  field_confirmation_letter:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 127
     region: content
   field_cv_resume:
     type: boolean
@@ -92,6 +114,26 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
+  field_employee_status:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 128
+    region: content
+  field_first_day_confirmation:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 121
+    region: content
   field_gift_pack:
     type: boolean
     label: above
@@ -112,6 +154,16 @@ content:
     third_party_settings: {  }
     weight: 112
     region: content
+  field_joiners_and_leavers:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 131
+    region: content
   field_level:
     type: entity_reference_label
     label: above
@@ -119,6 +171,26 @@ content:
       link: true
     third_party_settings: {  }
     weight: 115
+    region: content
+  field_liaise_with_caterer:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_lunch_invitation:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 124
     region: content
   field_medical:
     type: boolean
@@ -156,6 +228,26 @@ content:
     third_party_settings: {  }
     weight: 111
     region: content
+  field_parking_access:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_photo_permission:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 130
+    region: content
   field_position:
     type: entity_reference_label
     label: above
@@ -163,6 +255,26 @@ content:
       link: true
     third_party_settings: {  }
     weight: 105
+    region: content
+  field_prepared_document:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_scan_docs:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 129
     region: content
   field_source:
     type: string
@@ -205,6 +317,26 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 119
+    region: content
+  field_visit_tour:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 126
+    region: content
+  field_welcoming_mail:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 125
     region: content
   links:
     settings: {  }

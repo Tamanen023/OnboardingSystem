@@ -4,24 +4,36 @@ status: true
 dependencies:
   config:
     - field.field.node.employee.field_certificate_of_character
+    - field.field.node.employee.field_confirmation_letter
     - field.field.node.employee.field_cv_resume
     - field.field.node.employee.field_datejoined
     - field.field.node.employee.field_dl
     - field.field.node.employee.field_elcademy
     - field.field.node.employee.field_email
+    - field.field.node.employee.field_employee_status
+    - field.field.node.employee.field_first_day_confirmation
     - field.field.node.employee.field_gift_pack
     - field.field.node.employee.field_hardwares
+    - field.field.node.employee.field_joiners_and_leavers
     - field.field.node.employee.field_level
+    - field.field.node.employee.field_liaise_with_caterer
+    - field.field.node.employee.field_lunch_invitation
     - field.field.node.employee.field_medical
     - field.field.node.employee.field_name
     - field.field.node.employee.field_nationality
     - field.field.node.employee.field_nid
+    - field.field.node.employee.field_parking_access
+    - field.field.node.employee.field_photo_permission
     - field.field.node.employee.field_position
+    - field.field.node.employee.field_prepared_document
+    - field.field.node.employee.field_scan_docs
     - field.field.node.employee.field_source
     - field.field.node.employee.field_supervisor
     - field.field.node.employee.field_team
     - field.field.node.employee.field_visa
     - field.field.node.employee.field_visa_created
+    - field.field.node.employee.field_visit_tour
+    - field.field.node.employee.field_welcoming_mail
     - node.type.employee
   module:
     - datetime
@@ -47,6 +59,13 @@ content:
   field_certificate_of_character:
     type: boolean_checkbox
     weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_confirmation_letter:
+    type: boolean_checkbox
+    weight: 31
     region: content
     settings:
       display_label: true
@@ -89,6 +108,20 @@ content:
       placeholder: ''
       size: 60
     third_party_settings: {  }
+  field_employee_status:
+    type: boolean_checkbox
+    weight: 32
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_first_day_confirmation:
+    type: boolean_checkbox
+    weight: 25
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_gift_pack:
     type: boolean_checkbox
     weight: 21
@@ -103,6 +136,13 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  field_joiners_and_leavers:
+    type: boolean_checkbox
+    weight: 35
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_level:
     type: entity_reference_autocomplete
     weight: 12
@@ -112,6 +152,20 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_liaise_with_caterer:
+    type: boolean_checkbox
+    weight: 27
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_lunch_invitation:
+    type: boolean_checkbox
+    weight: 28
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_medical:
     type: boolean_checkbox
@@ -143,6 +197,20 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  field_parking_access:
+    type: boolean_checkbox
+    weight: 24
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_photo_permission:
+    type: boolean_checkbox
+    weight: 34
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_position:
     type: entity_reference_autocomplete
     weight: 10
@@ -152,6 +220,20 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_prepared_document:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_scan_docs:
+    type: boolean_checkbox
+    weight: 33
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_source:
     type: string_textfield
@@ -192,9 +274,23 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  field_visit_tour:
+    type: boolean_checkbox
+    weight: 30
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_welcoming_mail:
+    type: boolean_checkbox
+    weight: 29
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   path:
     type: path
-    weight: 24
+    weight: 36
     region: content
     settings: {  }
     third_party_settings: {  }

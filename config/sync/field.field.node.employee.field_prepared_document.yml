@@ -1,0 +1,21 @@
+uuid: 0727b162-a36c-48b0-9c33-ceb76cf1f98d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prepared_document
+    - node.type.employee
+id: node.employee.field_prepared_document
+field_name: field_prepared_document
+entity_type: node
+bundle: employee
+label: 'Prepared Document'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

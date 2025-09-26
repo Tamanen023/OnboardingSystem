@@ -1,0 +1,21 @@
+uuid: 596f9256-6e4d-4145-95a7-f80d784db631
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_joiners_and_leavers
+    - node.type.employee
+id: node.employee.field_joiners_and_leavers
+field_name: field_joiners_and_leavers
+entity_type: node
+bundle: employee
+label: 'List of Joiners and Leavers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
