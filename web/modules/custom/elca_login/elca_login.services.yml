@@ -1,0 +1,6 @@
+services:
+  elca_login.auth_controller:
+    class: Drupal\elca_login\Controller\AuthController
+    arguments: ['@session_manager', '@password']
+    tags:
+      - { name: controller.service_arguments }

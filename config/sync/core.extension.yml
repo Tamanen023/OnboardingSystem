@@ -23,6 +23,7 @@ module:
   editor: 0
   elca_admin: 0
   elca_api: 0
+  elca_login: 0
   examples: 0
   field: 0
   field_layout: 0
