@@ -1,0 +1,5 @@
+name: 'elca_api'
+type: module
+description: 'Module for all api'
+package: custom
+core_version_requirement: ^10 || ^11
