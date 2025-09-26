@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.employee.field_supervisor
     - field.field.node.employee.field_team
     - field.field.node.employee.field_visa
+    - field.field.node.employee.field_visa_created
     - node.type.employee
   module:
     - datetime
@@ -194,6 +195,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_visa_created:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 119
     region: content
   links:
     settings: {  }
