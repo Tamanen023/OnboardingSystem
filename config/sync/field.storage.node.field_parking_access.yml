@@ -1,0 +1,18 @@
+uuid: 109222e2-dbb7-4268-b950-6234cdc4d519
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_parking_access
+field_name: field_parking_access
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+uuid: 9530dd79-838b-47d4-9833-6ab4de13b59f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_scan_docs
+field_name: field_scan_docs
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

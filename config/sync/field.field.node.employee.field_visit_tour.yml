@@ -1,0 +1,21 @@
+uuid: 82aa73d6-a175-4e57-905a-38ff5f245b5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_visit_tour
+    - node.type.employee
+id: node.employee.field_visit_tour
+field_name: field_visit_tour
+entity_type: node
+bundle: employee
+label: 'Visit Tour'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

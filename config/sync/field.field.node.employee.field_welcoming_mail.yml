@@ -1,0 +1,21 @@
+uuid: ebf53a35-ce1d-4038-8606-39d809f0ce28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_welcoming_mail
+    - node.type.employee
+id: node.employee.field_welcoming_mail
+field_name: field_welcoming_mail
+entity_type: node
+bundle: employee
+label: 'Welcoming Mail'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

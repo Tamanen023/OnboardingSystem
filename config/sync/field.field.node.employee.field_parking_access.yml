@@ -1,0 +1,21 @@
+uuid: 7298e770-088c-489b-859b-ec0f70dc02d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parking_access
+    - node.type.employee
+id: node.employee.field_parking_access
+field_name: field_parking_access
+entity_type: node
+bundle: employee
+label: 'Parking Access'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
