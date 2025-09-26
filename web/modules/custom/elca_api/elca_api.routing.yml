@@ -1,0 +1,7 @@
+elca_api.employee:
+  path: '/elca-api/employee'
+  defaults:
+    _title: 'Employee'
+    _controller: '\Drupal\elca_api\Controller\ElcaApiController::getEmployee'
+  requirements:
+    _permission: 'access content'

@@ -22,6 +22,7 @@ module:
   dynamic_page_cache: 0
   editor: 0
   elca_admin: 0
+  elca_api: 0
   examples: 0
   field: 0
   field_ui: 0
