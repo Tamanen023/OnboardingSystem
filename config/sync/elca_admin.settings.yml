@@ -1,0 +1,4 @@
+last_import_fid: 34
+employee_bundle: employee
+csv_delimiter: ','
+multi_value_sep: '|'

@@ -1,0 +1,19 @@
+uuid: b61c49cc-5747-4734-8b43-d0981a8f803d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_visa
+    - node.type.employee
+id: node.employee.field_visa
+field_name: field_visa
+entity_type: node
+bundle: employee
+label: Visa
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

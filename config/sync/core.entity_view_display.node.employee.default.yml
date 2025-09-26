@@ -1,0 +1,165 @@
+uuid: cd2056df-24df-474a-af11-de00d8a9171c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.employee.field_certificate_of_character
+    - field.field.node.employee.field_cv_resume
+    - field.field.node.employee.field_datejoined
+    - field.field.node.employee.field_email
+    - field.field.node.employee.field_hardwares
+    - field.field.node.employee.field_level
+    - field.field.node.employee.field_medical
+    - field.field.node.employee.field_name
+    - field.field.node.employee.field_nationality
+    - field.field.node.employee.field_nid
+    - field.field.node.employee.field_position
+    - field.field.node.employee.field_source
+    - field.field.node.employee.field_supervisor
+    - field.field.node.employee.field_team
+    - field.field.node.employee.field_visa
+    - node.type.employee
+  module:
+    - datetime
+    - user
+id: node.employee.default
+targetEntityType: node
+bundle: employee
+mode: default
+content:
+  field_certificate_of_character:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_cv_resume:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_datejoined:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_hardwares:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_level:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_medical:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_nationality:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_nid:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_position:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_source:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_supervisor:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_team:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_visa:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

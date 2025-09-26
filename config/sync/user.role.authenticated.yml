@@ -9,6 +9,7 @@ dependencies:
     - contact
     - file
     - filter
+    - media
     - rest
     - search
     - shortcut
@@ -32,3 +33,4 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view media'

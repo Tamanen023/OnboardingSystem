@@ -1,0 +1,19 @@
+uuid: 78b51feb-8dcc-4d28-83a1-28e87dab3809
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_supervisor
+    - node.type.employee
+id: node.employee.field_supervisor
+field_name: field_supervisor
+entity_type: node
+bundle: employee
+label: Supervisor
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

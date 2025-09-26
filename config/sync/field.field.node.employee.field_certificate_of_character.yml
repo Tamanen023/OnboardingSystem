@@ -1,0 +1,21 @@
+uuid: 669bde35-8352-48dc-9bf1-dc10cd611842
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_certificate_of_character
+    - node.type.employee
+id: node.employee.field_certificate_of_character
+field_name: field_certificate_of_character
+entity_type: node
+bundle: employee
+label: 'Certificate of Character'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

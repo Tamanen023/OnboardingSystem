@@ -1,0 +1,18 @@
+uuid: 68830b0d-a4a5-4036-b132-3937e049f497
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_hardwares
+field_name: field_hardwares
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,5 @@
+elca_admin.import_employee:
+  title: Import employee
+  route_name: elca_admin.import_employee
+  weight: 10
+  parent: system.admin

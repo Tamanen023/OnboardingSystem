@@ -1,0 +1,7 @@
+elca_admin.import_employee:
+  path: 'admin/import-employee'
+  defaults:
+    _title: 'Import employee'
+    _form: 'Drupal\elca_admin\Form\ImportEmployee'
+  requirements:
+    _permission: 'administer site configuration'

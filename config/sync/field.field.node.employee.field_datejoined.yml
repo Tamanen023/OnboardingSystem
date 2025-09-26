@@ -1,0 +1,21 @@
+uuid: 28b8edff-4a21-480a-be82-552ef1a553da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_datejoined
+    - node.type.employee
+  module:
+    - datetime
+id: node.employee.field_datejoined
+field_name: field_datejoined
+entity_type: node
+bundle: employee
+label: 'Joining Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

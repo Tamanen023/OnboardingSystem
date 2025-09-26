@@ -1,0 +1,21 @@
+uuid: 2155a76e-ec42-415e-9955-227af2570672
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cv_resume
+    - node.type.employee
+id: node.employee.field_cv_resume
+field_name: field_cv_resume
+entity_type: node
+bundle: employee
+label: CV/resume
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -8,6 +8,7 @@ dependencies:
     - comment
     - contact
     - filter
+    - media
     - rest
     - search
     - system
@@ -24,3 +25,4 @@ permissions:
   - 'administer rest resources'
   - 'search content'
   - 'use text format restricted_html'
+  - 'view media'

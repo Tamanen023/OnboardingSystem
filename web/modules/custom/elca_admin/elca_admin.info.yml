@@ -1,0 +1,5 @@
+name: 'elca_admin'
+type: module
+description: 'elca admin module'
+package: custom
+core_version_requirement: ^10 || ^11
