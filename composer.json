@@ -23,6 +23,7 @@
         "drupal/core-recommended": "^11.2",
         "drupal/devel": "^5.4",
         "drupal/examples": "^4.0",
+        "drupal/field_group": "^4.0",
         "drupal/gin": "^5.0",
         "drupal/jsonapi_extras": "^3.26",
         "drupal/key": "^1.20",
