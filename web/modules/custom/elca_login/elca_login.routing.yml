@@ -1,0 +1,17 @@
+elca_login.login:
+  path: '/api/login'
+  defaults:
+    _controller: '\Drupal\elca_login\Controller\AuthController::login'
+    _format: 'json'
+  requirements:
+    _access: 'TRUE'
+  methods: [POST]
+
+elca_login.me:
+  path: '/api/me'
+  defaults:
+    _controller: '\Drupal\elca_login\Controller\AuthController::me'
+    _format: 'json'
+  requirements:
+    _access: 'TRUE'
+  methods: [GET]

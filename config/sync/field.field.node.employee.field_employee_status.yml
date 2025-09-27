@@ -1,0 +1,21 @@
+uuid: a1c38592-f546-44fa-9008-21e059037f4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_employee_status
+    - node.type.employee
+id: node.employee.field_employee_status
+field_name: field_employee_status
+entity_type: node
+bundle: employee
+label: 'Employee Status'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

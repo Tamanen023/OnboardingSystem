@@ -1,0 +1,21 @@
+uuid: d24c6b2f-5410-4ec4-b73f-72680e5a6014
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_liaise_with_caterer
+    - node.type.employee
+id: node.employee.field_liaise_with_caterer
+field_name: field_liaise_with_caterer
+entity_type: node
+bundle: employee
+label: 'Liaise with Caterer'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

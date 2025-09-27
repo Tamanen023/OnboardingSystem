@@ -1,0 +1,21 @@
+uuid: c1c74236-5e80-4b66-8c54-99ee516f5c55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photo_permission
+    - node.type.employee
+id: node.employee.field_photo_permission
+field_name: field_photo_permission
+entity_type: node
+bundle: employee
+label: 'Photo Permission'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

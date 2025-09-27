@@ -35,7 +35,6 @@ final class ElcaApiController extends ControllerBase {
 
     /** @var \Drupal\node\Entity\Node[] $nodes */
     $nodes = $storage->loadMultiple($nids);
-
     $out = [];
     foreach ($nodes as $node) {
       $out[] = [
@@ -57,6 +56,22 @@ final class ElcaApiController extends ControllerBase {
         'nid_required' => $this->bool($node, 'field_nid'),
         'hardware' => $this->bool($node, 'field_hardwares'),
         'joining_date' => $this->date($node, 'field_datejoined'),
+        'elcademy' => $this->bool($node, 'field_elcademy'),
+        'visa_created' => $this->bool($node, 'field_visa_created'),
+        'gift_pack' => $this->bool($node, 'field_gift_pack'),
+        'deparment_lead' => $this->refTermLabel($node, 'field_dl'),
+        'parking_access' => $this->bool($node, 'field_parking_access'),
+        'confirm_first_day' => $this->bool($node, 'field_first_day_confirmation'),
+        'prepared_document' => $this->bool($node, 'field_prepared_document'),
+        'liaise_with_caterer' => $this->bool($node, 'field_liaise_with_caterer'),
+        'lunch_invitation' => $this->bool($node, 'field_lunch_invitation'),
+        'welcoming_mail' => $this->bool($node, 'field_welcoming_mail'),
+        'visit_tour' => $this->bool($node, 'field_visit_tour'),
+        'confirmation_letter' => $this->bool($node, 'field_confirmation_letter'),
+        'employee_status' => $this->bool($node, 'field_employee_status'),
+        'scanned_docs' => $this->bool($node, 'field_scan_docs'),
+        'photo_permission' => $this->bool($node, 'field_photo_permission'),
+        'List_of_joiners_leavers' => $this->bool($node, 'field_joiners_and_leavers'),
         // Y-m-d
         'source' => $node->get('field_source')->value,
       ];

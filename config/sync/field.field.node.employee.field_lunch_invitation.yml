@@ -1,0 +1,21 @@
+uuid: 62cedf54-c6a4-48d2-8214-5eebd827c5f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lunch_invitation
+    - node.type.employee
+id: node.employee.field_lunch_invitation
+field_name: field_lunch_invitation
+entity_type: node
+bundle: employee
+label: 'Lunch Invitation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

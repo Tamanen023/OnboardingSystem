@@ -1,0 +1,21 @@
+uuid: fbd1d711-1b71-4df1-ba31-b2e940dad79b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_confirmation_letter
+    - node.type.employee
+id: node.employee.field_confirmation_letter
+field_name: field_confirmation_letter
+entity_type: node
+bundle: employee
+label: 'Confirmation Letter'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
