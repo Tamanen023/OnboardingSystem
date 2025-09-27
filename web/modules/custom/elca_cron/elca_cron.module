@@ -1,0 +1,131 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Mail\MailFormatHelper;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Render\RendererInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\symfony_mailer\EmailInterface;
+
+
+/**
+ * Implements hook_theme().
+ */
+function elca_cron_theme() {
+  $module_path = \Drupal::service('extension.list.module')->getPath('elca_cron') . '/templates';
+  return [
+    'elca_cron_interest_check' => [
+      'variables' => ['name'=>NULL, 'join_date'=>NULL, 'confirm_url'=>NULL],
+      'template' => 'elca-cron-interest-check',
+      'path' => $module_path,
+    ],
+  ];
+}
+
+/**
+ * Implements hook_mail().
+ */
+function elca_cron_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'employee_three_month':
+      $message['subject'] = $params['subject'] ?? 'Congratulations on 3 months!';
+      $message['body'][] = MailFormatHelper::htmlToText($params['body'] ?? '');
+      break;
+
+    case 'employee_six_month':
+      $message['subject'] = $params['subject'] ?? 'Half-year milestone 🎉';
+      $message['body'][] = MailFormatHelper::htmlToText($params['body'] ?? '');
+      break;
+
+    case 'mail_preparation_to_dl':
+      $message['subject'] = $params['subject'] ?? 'Visa for' . $params['name'] . ' has been created';
+      $message['body'][] = MailFormatHelper::htmlToText($params['body'] ?? '');
+      break;
+
+    case 'tecec_digest':
+      $message['subject'] = $params['subject'] ?? 'ELCAcademy arrivals';
+      // Send HTML
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8';
+      $message['body'][] = $params['body_html'] ?? '<p>(No data)</p>';
+      break;
+
+    case 'interest_check':
+      $build = [
+        '#theme'       => 'elca_cron_interest_check',
+        '#name'        => $params['name'] ?? '',
+        '#join_date'   => $params['join_date'] ?? '',
+        '#confirm_url' => $params['confirm_url'] ?? '#',
+      ];
+      $html = \Drupal::service('renderer')->renderRoot($build);
+
+      $message['subject'] = $params['subject'] ?? 'Quick check';
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8';
+
+      // ✅ HTML body must be an ARRAY of strings
+      $message['body'] = [(string) $html];
+
+      // ✅ Plain text alt must be a STRING
+      $message['plain'] = MailFormatHelper::htmlToText($html);
+      return;
+  }
+}
+
+function elca_cron_entity_update (EntityInterface $entity) {
+  if ($entity instanceof NodeInterface && $entity->bundle() === 'employee') {
+    _elca_cron_maybe_send_visa_created($entity,TRUE);
+  }
+}
+
+function _elca_cron_maybe_send_visa_created(NodeInterface $node, bool $is_update): void {
+  $field = 'field_visa_created'; // <-- your boolean field machine name
+  if (!$node->hasField($field)) {
+    return;
+  }
+
+  $current = (bool) $node->get($field)->value;
+
+  // On UPDATE: only fire when it flips from 0 -> 1.
+  if ($is_update) {
+    $original = (bool) ($node->original?->get($field)->value ?? 0);
+    if (!($original === FALSE && $current === TRUE)) {
+      return; // unchanged or turned off; do nothing
+    }
+  } else {
+    // On INSERT: only fire if it's already true at creation time.
+    if ($current !== TRUE) {
+      return;
+    }
+  }
+
+  $mail = \Drupal::service('plugin.manager.mail');
+  $langcode = \Drupal::languageManager()->getDefaultLanguage()->getId();
+
+  [$to, $title, $nid] = _elca_cron_recipient_and_meta($node);
+  if (!$to) {
+    \Drupal::logger('elca_cron')->notice('Skip visa_created for nid @nid: no recipient.', ['@nid' => $node->id()]);
+    return;
+  }
+
+  $params = [
+    'title' => $title,
+    'nid'   => $nid,
+    'user'  => \Drupal::currentUser()->getDisplayName(),
+    'when'  => \Drupal::service('date.formatter')->format(\Drupal::time()->getRequestTime(), 'short'),
+  ];
+
+  $mail->mail('elca_cron', 'visa_created', $to, $langcode, $params, NULL, TRUE);
+}
+
+/**
+ * Helper: pick recipient and basic metadata from the node.
+ * Adjust the field names as needed.
+ */
+function _elca_cron_recipient_and_meta(NodeInterface $node): array {
+  $email_field = 'field_email';  // <-- recipient email stored on the node
+  $to = $node->hasField($email_field) ? (string) $node->get($email_field)->value : '';
+  if (!filter_var($to, FILTER_VALIDATE_EMAIL)) {
+    $to = '';
+  }
+  return [$to, $node->label(), (int) $node->id()];
+}
